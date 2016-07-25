@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>xlsx导出</title>
+</head>
+<body>
+  <button onclick="handleClick()">点击导出xlsx文件</button>
+
+  <script src="static/javascripts/xlsx.core.min.js"></script>
+  <script src="static/javascripts/FileSaver.js"></script>
+  <script src="static/javascripts/Bolb.js"></script>
+  <script src="static/javascripts/utils.js"></script>
+  <script>
+  var list = [
+    { demo: 1, test: 11 },
+    { demo: 2, test: 22 },
+    { demo: 3, test: 33 },
+    { demo: 4, test: 44 },
+    { demo: 5, test: 55 },
+  ];
+  var columns = [
+    { name: 'demo' },
+    { name: 'test' }
+  ];
+  var tableName = '测试';
+  function handleClick (e) {
+    console.log(e);
+    generateAndDownloadXLSX(list, columns, tableName);
+  }
+  </script>
+</body>
+</html>
